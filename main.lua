@@ -43,7 +43,7 @@ function love.update(dt)
 end
 
 function love.keypressed(key)
-   if key == " " then
+   if key == "`" then
       game.score = game.score + 10
    end
    if key == "`" then
