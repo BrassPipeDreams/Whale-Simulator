@@ -65,8 +65,8 @@ function game.update(dt)
 			   table.remove(gesture)
 			   whale.dir = nil
             for k,v in pairs(krill.swarms) do krill.swarms[k]=nil end
-			   boat.x = 400
-			   boat.y = 300
+			   boat.x = math.random(0, 1000)
+			   boat.y = math.random(0, 1000)
 			   game.round = game.round + 1
 			   game.newround = game.newround * 2 + 50
 			end
