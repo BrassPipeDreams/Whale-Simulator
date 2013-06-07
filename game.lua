@@ -17,6 +17,7 @@ function game.load()
    
    game.score = 0
    game.round = 1
+   game.newround = 100
 end
 
 function game.draw()
@@ -55,6 +56,20 @@ function game.update(dt)
 			if whale.hunger > 100 then
 	         whale.hunger = 100
 	      end
+			if game.score >= game.newround then
+			   whale.x = 400
+			   whale.y = 300
+			   whale.health = 100
+			   whale.hunger = 100
+			   table.remove(gesture)
+			   whale.dir = nil
+            for k,v in pairs(krill.swarms) do krill.swarms[k]=nil end
+			   boatCur.x = 400
+			   boatCur.y = 300
+			   boat.destChoice()
+			   game.round = game.round + 1
+			   game.newround = game.newround * 2 + 50
+			end
 		end
 	end
 end
