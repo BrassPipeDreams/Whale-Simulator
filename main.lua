@@ -43,6 +43,9 @@ function love.update(dt)
 end
 
 function love.keypressed(key)
+   if key == " " then
+         game.score = game.score + 10
+   end
    if key == "`" then
       debug = not debug
    elseif key == "escape" then
@@ -52,8 +55,5 @@ function love.keypressed(key)
       elseif state == "title" then
          love.event.quit()
       end
-   if key == " " then
-         game.score = game.score + 10
-   end
    end   
 end
