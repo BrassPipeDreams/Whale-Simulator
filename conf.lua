@@ -1,5 +1,5 @@
 function love.conf(t)
-    t.title = "Whale Simulator 2014 APLHA"
+    t.title = "Whale Simulator 2014 \"APLHA\""
     t.author = "DaemonLee or MrWhales"
     t.url = "the Escapecraft.net forums or the Escapecraft IRC server"
     t.identity = nil            -- The name of the save directory (string)
