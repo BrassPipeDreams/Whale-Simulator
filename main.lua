@@ -52,7 +52,7 @@ function love.keypressed(key)
       elseif state == "title" then
          love.event.quit()
       end
-      if key == "h" then
+      if key == " " then
          game.score = game.score + 10
       end
    end   
