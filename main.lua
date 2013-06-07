@@ -13,6 +13,7 @@ function love.load()
    
    game.load()
    title.load()
+   credits.load()
    
    silkscreen = love.graphics.newFont("assets/slkscre.ttf", 20)
    love.graphics.setFont(silkscreen)
@@ -28,6 +29,7 @@ function love.draw()
    end
    if debug then
 	   love.graphics.print(love.timer.getFPS(), 100, 100)
+	   love.graphics.print(boat.rot, 100, 150)
 	end
 end
 
@@ -37,7 +39,6 @@ function love.update(dt)
    elseif state == "game" then
       game.update(dt)
    elseif state == "credits" then
-      credits.load()
       credits.update(dt)
    end
 end

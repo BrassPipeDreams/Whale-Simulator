@@ -44,9 +44,10 @@ function game.update(dt)
    whale.update(dt)
    boat.update(dt)
    waves_anim:update(dt)
-   if game.dist(boatCur.x, boatCur.y, boatDest.x, boatDest.y) then
-      boat.destChoice()
-   end
+   if game.dist(whale.x, whale.y, boat.x, boat.y) < (16+16) then
+	   whale.health = whale.health - 25
+      whale.isHurt = true
+	end
    
    for ei,ev in ipairs(krill.swarms) do
 		if game.dist(whale.x, whale.y, ev.x, ev.y) < (16+16) then
@@ -64,9 +65,8 @@ function game.update(dt)
 			   table.remove(gesture)
 			   whale.dir = nil
             for k,v in pairs(krill.swarms) do krill.swarms[k]=nil end
-			   boatCur.x = 400
-			   boatCur.y = 300
-			   boat.destChoice()
+			   boat.x = 400
+			   boat.y = 300
 			   game.round = game.round + 1
 			   game.newround = game.newround * 2 + 50
 			end

@@ -1,6 +1,7 @@
 whale = {}
 
 function whale.load()
+   whale.isHurt = false
    whale.x = 400
    whale.y = 300
    whale.speed = 50
