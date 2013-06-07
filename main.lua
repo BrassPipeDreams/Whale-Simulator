@@ -44,9 +44,6 @@ end
 
 function love.keypressed(key)
    if key == "`" then
-      game.score = game.score + 10
-   end
-   if key == "`" then
       debug = not debug
    elseif key == "escape" then
       if state == "game" then
