@@ -2,16 +2,24 @@ whale = {}
 
 function whale.load()
    whale.isHurt = false
+   whale.hurtRemaining = 0
    whale.x = 400
    whale.y = 300
    whale.speed = 50
    whale.hunger = 100
    whale.health = 100
    local whale_spr = love.graphics.newImage("assets/whale.png")
+   whale_spr:setFilter("nearest", "nearest")
 	whale_anim = newAnimation(whale_spr, 32, 64, 1, 3)
 end
 
 function whale.draw()
+   if whale.isHurt then
+      love.graphics.setColor(255, 0, 0)
+   else
+      love.graphics.setColor(255, 255, 255)
+   end
+   
 	if whale.dir == "n" then
       whale_anim:draw(whale.x, whale.y, 0, 1, 1, 16, 32)
 	elseif whale.dir == "s" then
@@ -91,6 +99,13 @@ function whale.update(dt)
 	end
 	
 	if whale.health < 0 then
-	   love.load()
+	   state = "gameover"
+	end
+	
+	if whale.isHurt then
+	   whale.hurtRemaining = whale.hurtRemaining - dt
+	      if whale.hurtRemaining <= 0 then
+	         whale.isHurt = false
+	      end
 	end
 end

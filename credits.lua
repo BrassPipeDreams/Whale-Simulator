@@ -5,7 +5,7 @@ end
 
 function credits.draw()
    love.graphics.setBackgroundColor(0, 0, 0)
-   love.graphics.printf("Made with LOVE! <3\n\n\nDaemon L. Schmidt - Coding and Design\n\nMrWhales - Art\n\nSpecial thanks to Bartbes,\nthe creator of Swingers and -gulp- AnAL!\n\n\n\nSwipe to go back to the title screen!\n---------->", 0, 150, 800, "center")
+   love.graphics.printf("Made with LOVE! <3\n\n\nDaemon L. Schmidt - Coding and Design\n\nMrWhales - Art\n\nSkunk_Giant - Music\n\nSpecial thanks to Bartbes,\nthe creator of Swingers and -gulp- AnAL!\n\n\n\nSwipe to go back to the title screen!\n---------->", 0, 150, 800, "center")
 end
 
 function credits.update(dt)

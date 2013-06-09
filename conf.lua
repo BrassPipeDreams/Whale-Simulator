@@ -1,14 +1,14 @@
 function love.conf(t)
     t.title = "Whale Simulator 2014 \"APLHA\""
-    t.author = "DaemonLee or MrWhales"
+    t.author = "DaemonLee, MrWhales or Skunk_Giant"
     t.url = "the Escapecraft.net forums or the Escapecraft IRC server"
     t.identity = nil            -- The name of the save directory (string)
     t.version = "0.8.0"
     t.console = false
     t.release = false
-    t.screen.width = 800        -- The window width (number)
-    t.screen.height = 600       -- The window height (number)
-    t.screen.fullscreen = false -- Enable fullscreen (boolean)
+    t.screen.width = 800
+    t.screen.height = 600
+    t.screen.fullscreen = false
     t.screen.vsync = false
     t.screen.fsaa = 0           -- The number of FSAA-buffers (number)
     t.modules.joystick = false   -- Enable the joystick module (boolean)

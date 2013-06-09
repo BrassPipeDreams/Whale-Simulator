@@ -2,6 +2,7 @@ require("whale")
 require("krill")
 require("boat")
 require("ui")
+require("gameover")
 
 game = {}
 
@@ -9,6 +10,7 @@ function game.load()
    krill.load()
    whale.load()
    boat.load()
+   gameover.load()
    
    seabed_spr = love.graphics.newImage("assets/seabed.png")
    
@@ -44,9 +46,12 @@ function game.update(dt)
    whale.update(dt)
    boat.update(dt)
    waves_anim:update(dt)
-   if game.dist(whale.x, whale.y, boat.x, boat.y) < (16+16) then
-	   whale.health = whale.health - 25
-      whale.isHurt = true
+   if whale.isHurt ~= true then
+      if game.dist(whale.x, whale.y, boat.x, boat.y) < (16+16) then
+	      whale.health = whale.health - 40
+         whale.isHurt = true
+         whale.hurtRemaining = 2
+	   end
 	end
    
    for ei,ev in ipairs(krill.swarms) do

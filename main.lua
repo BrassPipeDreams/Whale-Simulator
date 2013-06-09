@@ -1,5 +1,5 @@
-require("swingers")
-require("AnAL")
+require("libs/swingers")
+require("libs/AnAL")
 require("title")
 require("credits")
 require("game")
@@ -26,6 +26,8 @@ function love.draw()
       game.draw()
    elseif state == "credits" then
       credits.draw()
+   elseif state == "gameover" then
+      gameover.draw()
    end
    if debug then
 	   love.graphics.print(love.timer.getFPS(), 100, 100)
@@ -40,6 +42,8 @@ function love.update(dt)
       game.update(dt)
    elseif state == "credits" then
       credits.update(dt)
+   elseif state == "gameover" then
+      gameover.update(dt)
    end
 end
 
