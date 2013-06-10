@@ -14,7 +14,6 @@ function gameover.update(dt)
    end
    if gesture[1] == "n" then
       state = "title"
-      table.remove(gesture)
       game.load()
    end
 		swingers.checkError()

@@ -2,11 +2,12 @@ boat = {}
 
 function boat.load()
    local boat_spr = love.graphics.newImage("assets/boat.png")
+   boat_spr:setFilter("nearest", "nearest")
    boat_anim = newAnimation(boat_spr, 32, 64, 0.5, 3)
    boat.x = math.random(0, 1000)
    boat.y = math.random(0, 1000)
    boat.rot = 0
-   boat.speed = 50
+   boat.speed = 75
    boatDist = math.random(100, 500)
 end
 

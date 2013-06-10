@@ -13,8 +13,10 @@ function game.load()
    gameover.load()
    
    seabed_spr = love.graphics.newImage("assets/seabed.png")
+   seabed_spr:setFilter("nearest", "nearest")
    
    local waves_spr = love.graphics.newImage("assets/waves.png")
+   waves_spr:setFilter("nearest", "nearest")
    waves_anim = newAnimation(waves_spr, 100, 100, 2, 3)
    
    game.score = 0
@@ -32,6 +34,7 @@ function game.draw()
 	end
 	krill.draw()
 	whale.draw()
+	love.graphics.setColor(255, 255, 255)
 	for i = 0,7 do
 		for j = -1,6 do	   
 	      waves_anim:draw(i*100,j*100)

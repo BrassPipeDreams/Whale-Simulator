@@ -8,8 +8,8 @@ function love.conf(t)
     t.release = false
     t.screen.width = 800
     t.screen.height = 600
-    t.screen.fullscreen = false
-    t.screen.vsync = false
+    t.screen.fullscreen = true
+    t.screen.vsync = true
     t.screen.fsaa = 0           -- The number of FSAA-buffers (number)
     t.modules.joystick = false   -- Enable the joystick module (boolean)
     t.modules.audio = true      -- Enable the audio module (boolean)

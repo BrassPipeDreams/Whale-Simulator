@@ -5,6 +5,7 @@ function whale.load()
    whale.hurtRemaining = 0
    whale.x = 400
    whale.y = 300
+   whale.dir = 0
    whale.speed = 50
    whale.hunger = 100
    whale.health = 100

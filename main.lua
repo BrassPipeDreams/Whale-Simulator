@@ -3,6 +3,7 @@ require("libs/AnAL")
 require("title")
 require("credits")
 require("game")
+require("facts")
 debug = false
 
 function love.load()
@@ -14,9 +15,9 @@ function love.load()
    game.load()
    title.load()
    credits.load()
+   facts.load()
    
-   silkscreen = love.graphics.newFont("assets/slkscre.ttf", 20)
-   love.graphics.setFont(silkscreen)
+   silkscreen = love.graphics.setNewFont("assets/slkscre.ttf", 20)
 end
 
 function love.draw()
@@ -28,10 +29,11 @@ function love.draw()
       credits.draw()
    elseif state == "gameover" then
       gameover.draw()
+   elseif state == "facts" then
+      facts.draw()
    end
    if debug then
 	   love.graphics.print(love.timer.getFPS(), 100, 100)
-	   love.graphics.print(boat.rot, 100, 150)
 	end
 end
 
@@ -44,6 +46,8 @@ function love.update(dt)
       credits.update(dt)
    elseif state == "gameover" then
       gameover.update(dt)
+   elseif state == "facts" then
+      facts.update(dt)
    end
 end
 
