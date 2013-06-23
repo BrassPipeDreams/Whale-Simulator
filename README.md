@@ -9,6 +9,6 @@ HOW TO INSTALL FROM GITHUB MASTER BRANCH:
 2. Download Whale Simulator 2014
 3. Extract .zip
 4. Go into the new folder that was created
-5. Select ALL the .lua files and the asset folder then .zip them
-6. Change .zip to .love (You need to turn on file extensions if you're in Windows)
+5. Select ALL the .lua files, assets and libs folders then .zip them
+6. Change .zip to .love (You need to turn on file extensions if you're on Windows)
 7. Excute
