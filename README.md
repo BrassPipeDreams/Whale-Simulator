@@ -12,3 +12,5 @@ HOW TO INSTALL FROM GITHUB MASTER BRANCH:
 5. Select ALL the .lua files, assets and libs folders then .zip them
 6. Change .zip to .love (You need to turn on file extensions if you're on Windows)
 7. Excute
+
+And one <b>note</b>: It just works with Love 0.8, newest versions should not work.
