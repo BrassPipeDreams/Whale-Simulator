@@ -3,20 +3,21 @@ ASSETS = assets/textures/*
 FONTS = assets/fonts/*.ttf
 
 all:
-	find  src/ -type f -exec zip -9j whale-simulator.love {} \;
-	zip -9 whale-simulator.love $(LIBS) $(ASSETS) $(FONTS)
+	mkdir -p build
+	find  src/ -type f -exec zip -9j build/whale-simulator.love {} \;
+	zip -9 build/whale-simulator.love $(LIBS) $(ASSETS) $(FONTS)
 
 clean:
-	rm whale-simulator.love
+	rm -r build
 
 install:
-	echo '#!/bin/bash' >> /usr/local/bin/whale-simulator
-	echo 'love /usr/share/Whale-Simulator/whale-simulator.love' >> /usr/local/bin/whale-simulator
-	chmod +x /usr/local/bin/whale-simulator
+	cp misc/whale-simulator /usr/local/bin/
+	cp misc/whale-simulator.desktop /usr/share/applications/
 
 	mkdir /usr/share/Whale-Simulator
-	cp -pf ./whale-simulator.love /usr/share/Whale-Simulator/whale-simulator.love
+	cp -pf build/whale-simulator.love /usr/share/Whale-Simulator/whale-simulator.love
 
 remove:
 	rm -r /usr/local/bin/whale-simulator
 	rm -r /usr/share/Whale-Simulator
+	rm -r /usr/share/applications/whale-simulator.desktop
