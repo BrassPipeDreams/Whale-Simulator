@@ -10,7 +10,7 @@ SRCFILES=src/*.lua
 FILES=*.lua
 LIB=libs/*
 ASSETS=assets/*/*
-GAME=out/whale-sim.love
+GAME=build/whale-sim.love
 
 if ls -U out/* > /dev/null; then
 	rm out/whale-sim.love #removing any previous game launcher before generating another.
@@ -22,6 +22,6 @@ rm whale-sim.zip #removing the old zip file
 zip whale-sim $FILES $LIB $ASSETS > /dev/null
 rm *.lua
 
-mv whale-sim.zip out/whale-sim.love
+mv whale-sim.zip build/whale-sim.love
 
 echo "DONE! NOW, GO ENJOY THE GAME. ;)"

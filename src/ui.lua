@@ -1,3 +1,9 @@
+--[[
+	
+	UI of the game.
+]]
+
+
 ui = {}
 
 function ui.load()

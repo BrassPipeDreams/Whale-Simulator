@@ -1,9 +1,16 @@
+--[[
+
+]]
+
 require("libs/swingers")
 require("libs/AnAL")
 require("title")
 require("credits")
 require("game")
 require("facts")
+
+gui = require "libs/GUI"
+
 debug = false
 
 function love.load()
@@ -17,7 +24,7 @@ function love.load()
    credits.load()
    facts.load()
    
-   font = love.graphics.setNewFont("assets/fonts/OpenSans-Regular.ttf", 20)
+   defaultFont = love.graphics.setNewFont("assets/fonts/OpenSans-Regular.ttf", 30)
 end
 
 function love.draw()
@@ -33,7 +40,7 @@ function love.draw()
       facts.draw()
    end
 	if debug then
-		love.graphics.print(love.timer.getFPS(), 100, 100)
+		love.graphics.print(love.timer.getFPS(), 10, 10)
 	end
 end
 

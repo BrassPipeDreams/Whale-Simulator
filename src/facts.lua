@@ -1,13 +1,12 @@
 facts = {}
 
 function facts.load()
-   lock_spr = love.graphics.newImage("assets/icons/lock.png")
+   lock_spr = love.graphics.newImage("assets/textures/lock.png")
    mouseX = love.mouse.getX()
    mouseY = love.mouse.getY()
 end
 
 function facts.draw()
-   love.graphics.printf("Swipe to\ngo back!\n\n\nI\nI\nI\nI\nI\nI\nI\nI\nV", 600, 50, 200, "center")
 
    love.graphics.draw(lock_spr, 50, 50, 0, 1, 1, 25, 25)
    love.graphics.draw(lock_spr, 200, 50, 0, 1, 1, 25, 25)

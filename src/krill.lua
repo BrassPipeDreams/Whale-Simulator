@@ -5,8 +5,8 @@ function krill.load()
 	krill.swarm_dt = 0
 	krill.swarm_rate = 5
 	
-	local krill_spr = love.graphics.newImage("assets/icons/krill.png")
-	krill_anim = newAnimation(krill_spr, 32, 32, 1, 3)
+	local krill_sprite = love.graphics.newImage("assets/textures/krill.png")
+	krill_anim = newAnimation(krill_sprite, 32, 32, 1, 3)
 end
 
 function krill.draw()

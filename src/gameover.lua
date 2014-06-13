@@ -8,7 +8,7 @@ function gameover.draw()
 end
 
 function gameover.update(dt)
-  	swingers.update()
+  	--[[ swingers.update()
 	if swingers.checkGesture() then
 		gesture = swingers.getExtGesture()
   	end
@@ -17,4 +17,7 @@ function gameover.update(dt)
     	game.load()
    	end
 	swingers.checkError()
+	]]
+
+	-- TODO: A resurrect and a back to menu button.
 end

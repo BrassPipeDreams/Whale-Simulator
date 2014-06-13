@@ -9,9 +9,9 @@ function whale.load()
    whale.speed = 50
    whale.hunger = 100
    whale.health = 100
-   local whale_spr = love.graphics.newImage("assets/icons/whale.png")
-   whale_spr:setFilter("nearest", "nearest")
-	whale_anim = newAnimation(whale_spr, 32, 64, 1, 3)
+   local whale_sprite = love.graphics.newImage("assets/textures/whale.png")
+   whale_sprite:setFilter("nearest", "nearest")
+	whale_anim = newAnimation(whale_sprite, 32, 64, 1, 3)
 end
 
 function whale.draw()
@@ -43,12 +43,12 @@ function whale.draw()
 end
 
 function whale.update(dt)
-   swingers.update()
+   --[[ swingers.update()
    if swingers.checkGesture() then
    	gesture = swingers.getExtGesture()
-   end
+   end ]]
    
-   if gesture[1] ~= nil then
+   --[[ if gesture[1] ~= nil then
       whale.dir = gesture[1]
    end
    
@@ -72,10 +72,11 @@ function whale.update(dt)
    elseif whale.dir == "nw" then
       whale.y = whale.y - math.sin(whale.speed*dt)
       whale.x = whale.x - math.sin(whale.speed*dt)
-   end
+   end ]]
    whale_anim:update(dt)
-	swingers.checkError()
+	--swingers.checkError()
 	
+
 	if whale.x < 0 then
 		whale.x = 800
 	elseif whale.x > 800 then
@@ -94,7 +95,7 @@ function whale.update(dt)
 	      whale.health = whale.health + 0.5*dt
 	   end
 	elseif whale.hunger > 0 then
-	   whale.hunger = whale.hunger - 1*dt
+	   whale.hunger = whale.hunger - 1*dt 
 	else
 	   whale.health = whale.health - 2*dt
 	end
