@@ -21,3 +21,4 @@ And one <b>note</b>: The game should work with LÖVE2D 0.9 and 0.8.
 ==
 * <a href="https://github.com/DaemonLee">Daemon L. Schmidt</a>
 * Rafael C. Nunes(Me)
+* Timmy Jacobs (MrWhales)
