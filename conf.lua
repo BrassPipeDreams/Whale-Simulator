@@ -3,12 +3,12 @@ function love.conf(t)
     t.author = "DaemonLee, MrWhales or Skunk_Giant"
     t.url = "the Escapecraft.net forums or the Escapecraft IRC server"
     t.identity = nil            -- The name of the save directory (string)
-    t.version = "0.8.0"
-    t.console = false
+    t.version = "0.9.1"
+    t.console = true
     t.release = false
     t.screen.width = 800
     t.screen.height = 600
-    t.screen.fullscreen = true
+    t.screen.fullscreen = false
     t.screen.vsync = true
     t.screen.fsaa = 0           -- The number of FSAA-buffers (number)
     t.modules.joystick = false   -- Enable the joystick module (boolean)
