@@ -15,8 +15,7 @@ How to install from github .zip file:
 6. Change .zip to .love on windows and play the game
 7. Got to the out/ folder and excute the game :)
 
-And one <b>note</b>: The game just works with the 0.8 version of LÖVE2D , newest versions should not work.
-
+And one <b>note</b>: The game should work with LÖVE2D 0.9 and 0.8.
 
 <b>Contributors</b>
 ==
