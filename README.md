@@ -13,9 +13,7 @@ HOW TO INSTALL FROM GITHUB
 
 1. Get [löve2D](https://love2d.org/)
 
-2. git clone https://github.com/DaemonLee/Whale-Simulator.git ; cd Whale-Simulator ; make
-
-3. Execute with love
+2. git clone https://github.com/DaemonLee/Whale-Simulator.git ; cd Whale-Simulator ; make ; sudo make install
 
 ###The Hard Way
 
