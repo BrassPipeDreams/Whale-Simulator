@@ -35,37 +35,38 @@ animation.__index = animation
 -- @param frames The number of frames, 0 for autodetect
 -- @return The created animation
 function newAnimation(image, fw, fh, delay, frames)
-	local a = {}
-	a.img = image
-	a.frames = {}
-	a.delays = {}
-	a.timer = 0
-	a.position = 1
-	a.fw = fw
-	a.fh = fh
-	a.playing = true
-	a.speed = 1
-	a.mode = 1
-	a.direction = 1
-	local imgw = image:getWidth()
-	local imgh = image:getHeight()
-	if frames == 0 then
-		frames = imgw / fw * imgh / fh
-	end
-	local rowsize = imgw/fw
-	for i = 1, frames do
-		local row = math.floor((i-1)/rowsize)
-		local column = (i-1)%rowsize
-		local frame = love.graphics.newQuad(column*fw, row*fh, fw, fh, imgw, imgh)
-		table.insert(a.frames, frame)
-		table.insert(a.delays, delay)
-	end
-	return setmetatable(a, animation)
+local a = {}
+a.img = image
+a.frames = {}
+a.delays = {}
+a.timer = 0
+a.position = 1
+a.fw = fw
+a.fh = fh
+a.playing = true
+a.speed = 1
+a.mode = 1
+a.direction = 1
+local imgw = image:getWidth()
+local imgh = image:getHeight()
+if frames == 0 then
+frames = imgw / fw * imgh / fh
+end
+local rowsize = imgw/fw
+for i = 1, frames do
+local row = math.floor((i-1)/rowsize)
+local column = (i-1)%rowsize
+local frame = love.graphics.newQuad(column*fw, row*fh, fw, fh, imgw, imgh)
+table.insert(a.frames, frame)
+table.insert(a.delays, delay)
+end
+return setmetatable(a, animation)
 end
 
 --- Update the animation
 -- @param dt Time that has passed since last call
 function animation:update(dt)
+<<<<<<< HEAD
 	if not self.playing then return end
 	self.timer = self.timer + dt * self.speed
 	if self.timer > self.delays[self.position] then
@@ -88,12 +89,40 @@ function animation:update(dt)
 			self.position = #self.frames
 		end
 	end
+=======
+if not self.playing then return end
+self.timer = self.timer + dt * self.speed
+if self.timer > self.delays[self.position] then
+self.timer = self.timer - self.delays[self.position]
+self.position = self.position + 1 * self.direction
+if self.position > #self.frames then
+if self.mode == 1 then
+self.position = 1
+elseif self.mode == 2 then
+self.position = self.position - 1
+self:stop()
+elseif self.mode == 3 then
+self.direction = -1
+self.position = self.position - 1
+end
+elseif self.position < 1 and self.mode == 3 then
+self.direction = 1
+self.position = self.position + 1
+elseif self.position < 1 and self.mode == 4 then
+self.position = #self.frames
+end
+end
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Draw the animation
 local drawq = love.graphics.drawq or love.graphics.draw
 function animation:draw(...)
+<<<<<<< HEAD
 	return drawq(self.img, self.frames[self.position], ...)
+=======
+return drawq(self.img, self.frames[self.position], ...)
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Add a frame
@@ -103,9 +132,9 @@ end
 -- @param h The height of the frame
 -- @param delay The delay before the next frame is shown
 function animation:addFrame(x, y, w, h, delay)
-	local frame = love.graphics.newQuad(x, y, w, h, self.img:getWidth(), self.img:getHeight())
-	table.insert(self.frames, frame)
-	table.insert(self.delays, delay)
+local frame = love.graphics.newQuad(x, y, w, h, self.img:getWidth(), self.img:getHeight())
+table.insert(self.frames, frame)
+table.insert(self.delays, delay)
 end
 
 --- Play the animation
@@ -113,68 +142,81 @@ end
 -- Basically makes sure it uses the delays
 -- to switch to the next frame.
 function animation:play()
-	self.playing = true
+self.playing = true
 end
 
 --- Stop the animation
 function animation:stop()
-	self.playing = false
+self.playing = false
 end
 
 --- Reset
 -- Go back to the first frame.
 function animation:reset()
+<<<<<<< HEAD
 	return self:seek(1)
+=======
+return self:seek(1)
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Seek to a frame
 -- @param frame The frame to display now
 function animation:seek(frame)
-	self.position = frame
-	self.timer = 0
+self.position = frame
+self.timer = 0
 end
 
 --- Get the currently shown frame
 -- @return The current frame
 function animation:getCurrentFrame()
-	return self.position
+return self.position
 end
 
 --- Get the number of frames
 -- @return The number of frames
 function animation:getSize()
-	return #self.frames
+return #self.frames
 end
 
 --- Set the delay between frames
 -- @param frame Which frame to set the delay for
 -- @param delay The delay
 function animation:setDelay(frame, delay)
-	self.delays[frame] = delay
+self.delays[frame] = delay
 end
 
 --- Set the speed
 -- @param speed The speed to play at (1 is normal, 2 is double, etc)
 function animation:setSpeed(speed)
-	self.speed = speed
+self.speed = speed
 end
 
 --- Get the width of the current frame
 -- @return The width of the current frame
 function animation:getWidth()
+<<<<<<< HEAD
 	return (select(3, self.frames[self.position]:getViewport()))
+=======
+return (select(3, self.frames[self.position]:getViewport()))
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Get the height of the current frame
 -- @return The height of the current frame
 function animation:getHeight()
+<<<<<<< HEAD
 	return (select(4, self.frames[self.position]:getViewport()))
+=======
+return (select(4, self.frames[self.position]:getViewport()))
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Set the play mode
 -- Could be "loop" to loop it, "once" to play it once, or "bounce" to play it, reverse it, and play it again (looping)
 -- @param mode The mode: one of the above
 function animation:setMode(mode)
+<<<<<<< HEAD
 	if mode == "loop" then
 		self.mode = 1
 		self.direction = 1
@@ -187,11 +229,26 @@ function animation:setMode(mode)
 		self.mode = 4
 		self.direction = -1
 	end
+=======
+if mode == "loop" then
+self.mode = 1
+self.direction = 1
+elseif mode == "once" then
+self.mode = 2
+self.direction = 1
+elseif mode == "bounce" then
+self.mode = 3
+elseif mode == "reverse" then
+self.mode = 4
+self.direction = -1
+end
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end
 
 --- Animations_legacy_support
 -- @usage Add legacy support, basically set love.graphics.newAnimation again, and allow you to use love.graphics.draw
 if Animations_legacy_support then
+<<<<<<< HEAD
 	love.graphics.newAnimation = newAnimation
 	local oldLGDraw = love.graphics.draw
 	function love.graphics.draw(item, ...)
@@ -201,4 +258,15 @@ if Animations_legacy_support then
 			return oldLGDraw(item, ...)
 		end
 	end
+=======
+love.graphics.newAnimation = newAnimation
+local oldLGDraw = love.graphics.draw
+function love.graphics.draw(item, ...)
+if type(item) == "table" and item.draw then
+return item:draw(...)
+else
+return oldLGDraw(item, ...)
+end
+end
+>>>>>>> 8cd30f7e893f97346c78de852025edc7c15a8472
 end

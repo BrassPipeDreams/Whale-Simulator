@@ -12,10 +12,10 @@ function game.load()
    boat.load()
    gameover.load()
    
-   seabed_spr = love.graphics.newImage("assets/seabed.png")
+   seabed_spr = love.graphics.newImage("assets/icons/seabed.png")
    seabed_spr:setFilter("nearest", "nearest")
    
-   local waves_spr = love.graphics.newImage("assets/waves.png")
+   local waves_spr = love.graphics.newImage("assets/icons/waves.png")
    waves_spr:setFilter("nearest", "nearest")
    waves_anim = newAnimation(waves_spr, 100, 100, 2, 3)
    

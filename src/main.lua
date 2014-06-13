@@ -17,7 +17,7 @@ function love.load()
    credits.load()
    facts.load()
    
-   silkscreen = love.graphics.setNewFont("assets/slkscre.ttf", 20)
+   font = love.graphics.setNewFont("assets/fonts/OpenSans-Regular.ttf", 20)
 end
 
 function love.draw()
@@ -32,8 +32,8 @@ function love.draw()
    elseif state == "facts" then
       facts.draw()
    end
-   if debug then
-	   love.graphics.print(love.timer.getFPS(), 100, 100)
+	if debug then
+		love.graphics.print(love.timer.getFPS(), 100, 100)
 	end
 end
 

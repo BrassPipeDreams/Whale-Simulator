@@ -9,7 +9,7 @@ function whale.load()
    whale.speed = 50
    whale.hunger = 100
    whale.health = 100
-   local whale_spr = love.graphics.newImage("assets/whale.png")
+   local whale_spr = love.graphics.newImage("assets/icons/whale.png")
    whale_spr:setFilter("nearest", "nearest")
 	whale_anim = newAnimation(whale_spr, 32, 64, 1, 3)
 end

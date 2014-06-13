@@ -1,7 +1,7 @@
 facts = {}
 
 function facts.load()
-   lock_spr = love.graphics.newImage("assets/lock.png")
+   lock_spr = love.graphics.newImage("assets/icons/lock.png")
    mouseX = love.mouse.getX()
    mouseY = love.mouse.getY()
 end
