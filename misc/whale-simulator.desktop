@@ -1,0 +1,10 @@
+[Desktop Entry]
+Name=Whale Simulator
+Comment=The world's premiere whale simulator.
+Exec=whale-simulator
+Icon=
+Terminal=false
+Type=Application
+Categories=Game;SimulationGame;
+GenericName=
+Keywords=game;
