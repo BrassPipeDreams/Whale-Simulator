@@ -1,15 +1,26 @@
+--[[
+
+]]
+
 title = {}
 
+local menu = {newGame = "NEW GAME", credits="CREDITS", options = "OPTIONS", exit = "QUIT"}
+
 function title.load()
-   font = love.graphics.newFont("assets/fonts/OpenSans-Regular.ttf", 20)
-   love.graphics.setFont(font)
-   mouseX = love.mouse.getX()
-   mouseY = love.mouse.getY()
+	openSans = love.graphics.newFont("assets/fonts/OpenSans-Regular.ttf", 30)
+	openSansBold = love.graphics.newFont("assets/fonts/OpenSans-Bold.ttf", 30);
+   	love.graphics.setFont(openSansBold)
+
+	gui.newButton(menu.newGame, 380, 300, "start") 
+	gui.newButton(menu.options, 380, 340, "options")
+	gui.newButton(menu.credits, 380, 380, "credits")
+	gui.newButton(menu.exit, 380, 420, "quit")
 end
 
 function title.draw()
-   love.graphics.setBackgroundColor(0, 202, 202)
-   love.graphics.printf("WHALE SIMULATOR!", 0, 80, 300, "center")
+	love.graphics.setFont(openSansBold)
+   	love.graphics.setBackgroundColor(128, 171, 212)
+   	love.graphics.printf("Whale Simulator", 0, 80, 300, "center")
    --[[ love.graphics.printf("^\nI\nI\nI\nI\nI\n<--------+-------->\nI\nI\nI\nI\nI\nV", 0, 200, 800, "center")
    if game.dist(mouseX, mouseY, 400, 200) < (32+32) then
       love.graphics.print("\n Swipe up for facts!", mouseX, mouseY)
@@ -20,10 +31,13 @@ function title.draw()
    elseif game.dist(mouseX, mouseY, 525, 330) < (32+32) then
       love.graphics.print("\n Swipe to start!", mouseX, mouseY)
    end ]]
+
+	-- One call, and everything will be drawn :P
+	gui.buttonDraw()
 end
 
 function title.update(dt)
-   mouseX = love.mouse.getX()
+   --[[ mouseX = love.mouse.getX()
    mouseY = love.mouse.getY()
    	swingers.update()
 	if swingers.checkGesture() then
@@ -40,5 +54,11 @@ function title.update(dt)
       table.remove(gesture)
    elseif gesture[1] == "s" then
    end
-		swingers.checkError()
+		swingers.checkError() ]]
+end
+
+function love.mousepressed(x, y)
+	if(state == "title") then
+		gui.buttonClick(x, y)
+	end
 end
