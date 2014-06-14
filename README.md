@@ -9,7 +9,7 @@ The world's premiere whale simulator.
 HOW TO INSTALL FROM GITHUB
 =========================================
 
-###The Easy Way
+###The easy way
 
 1. Get [löve2D](https://love2d.org/)
 
@@ -17,7 +17,7 @@ HOW TO INSTALL FROM GITHUB
 
 3. cd Whale-Simulator ; make ; sudo make install
 
-###The Hard Way
+###The hard way
 
 1. Download and install/compile Love from https://love2d.org/ or I'm sure it's also in your repositories or someting. ;3
 2. Download Whale Simulator
@@ -29,15 +29,8 @@ HOW TO INSTALL FROM GITHUB
 
 And one __note__: The game should work with Löve2D 0.9.x and 0.8.
 
-<<<<<<< HEAD
-<b>Contributors</b>
-==
-* <a href="https://github.com/DaemonLee">Daemon L. Schmidt</a>
-* Rafael C. Nunes(Me)
-=======
 __Contributors__
 ================
 * [Daemon L. Schmidt](https://github.com/DaemonLee)
 * [Rafael C. Nunes](https://github.com/rafaelcn)
->>>>>>> 971268bf71665a49e67ae958d475c57385887019
 * Timmy Jacobs (MrWhales)
